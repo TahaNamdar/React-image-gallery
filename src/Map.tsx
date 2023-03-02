@@ -153,9 +153,9 @@ const Map: FC = () => {
         <Gallery
           index={index}
           setIndex={(i) => setIndex(i)}
-          gallery={(gallery_test as any)[`gallery${index}`].images}
+          gallery={(gallery_test)[`gallery${index}`].images}
           onClose={onClose}
-          title={(gallery_test as any)[`gallery${index}`].title}
+          title={(gallery_test)[`gallery${index}`].title}
         />
       )}
 

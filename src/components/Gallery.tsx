@@ -32,6 +32,7 @@ const Gallery: FC<GalleryProps> = ({...props}:GalleryProps) => {
     const activeImage = (document.querySelector(".image-gallery-thumbnail.active > span > img")as HTMLImageElement).src
     setCurrentImage(activeImage)
 }
+
   return (
     <div id="gallery" className={Style.gallery} onClick={onClickBackground}>
       <section className='iconWrapper'>             

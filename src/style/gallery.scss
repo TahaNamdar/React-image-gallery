@@ -56,7 +56,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
@@ -67,8 +66,8 @@
   text-align: center;
   border-radius: 6px;
   padding: 10px;
+  font-weight: bold;
   position: absolute;
-  z-index: 1;
   top: -5px;
   left: 130%;
 }
@@ -81,6 +80,7 @@
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
+  z-index: 3 !important;
   border-color: transparent white transparent transparent;
 }
 .tooltip:hover .tooltiptext {
