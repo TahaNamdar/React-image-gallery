@@ -5,7 +5,6 @@ import ImageGallery from 'react-image-gallery'
 import Style from '../style/gallery.module.sass'
 import '../style/gallery.scss'
 import { useImage} from '../hooks/useImage'
-import { saveAs } from 'file-saver'
 
 
 interface GalleryProps {
