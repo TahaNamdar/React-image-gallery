@@ -1,5 +1,6 @@
 //overWrite react image lib styles
 
+
 .image-gallery-index{
   background-color: transparent !important;
   color: white !important ;
@@ -50,6 +51,40 @@
 
 .mLeft{
   margin-left: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: white;
+  color: #002861;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 130%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 //Mobile Frame
 

@@ -28,7 +28,6 @@ const Gallery: FC<GalleryProps> = ({...props}:GalleryProps) => {
 
 
   const downloadImage = () => {
-    console.log("hello world")
     // active imag
     const activeImage = (document.querySelector(".image-gallery-thumbnail.active > span > img")as HTMLImageElement).src
     setCurrentImage(activeImage)

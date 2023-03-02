@@ -3,11 +3,13 @@ import { ReactComponent as Benefit } from '../images/Photo.svg'
 import { ReactComponent as Photo } from '../images/Photo.svg'
 import { ReactComponent as Environment } from '../images/Environment.svg'
 import Style from '../style/hotspot.module.sass'
+import '../style/gallery.scss'
 
 type HotspotType = 'benefit' | 'photo' | 'environment'
 
 interface HotspotProps {
   hotspotType: HotspotType
+  title:string
   count?: number
   onClick: () => void
   x: number
@@ -48,13 +50,19 @@ const getClass = (type: HotspotType) => {
 const Hotspot: FC<HotspotProps> = (props) => {
   return (
     <div className={Style.hotspot} style={{ left: props.x + '%', top: props.y + '%' }}>
-      <div className={getClass(props.hotspotType)}></div>
+    <div className='tooltip'>
+
+    <span className="tooltiptext">{props.title}</span>
+<div className={getClass(props.hotspotType)}></div>
       {getInner(props.hotspotType, props.onClick)}
       {props.count && <span className={Style.count}>{props.count}</span>}
       <div className={Style.popup}>
         <div className={Style.tip}></div>
         {props.children}
       </div>
+    </div>
+
+      
     </div>
   )
 }

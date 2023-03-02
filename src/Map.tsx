@@ -140,8 +140,9 @@ const Map: FC = () => {
               x={gallery_test[g].x}
               y={gallery_test[g].y}
               count={gallery_test[g].images.length}
+              title = {gallery_test[g].title}
+              
             >
-              <p>{gallery_test[g].title}</p>
             </Hotspot>
           })}
         </div>
