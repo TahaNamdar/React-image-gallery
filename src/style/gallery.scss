@@ -1,0 +1,106 @@
+//overWrite react image lib styles
+
+.image-gallery-index{
+  background-color: transparent !important;
+  color: white !important ;
+  right: 44% !important;
+  top: 120% !important;
+}
+
+.image-gallery-slide .image-gallery-image {
+  height: 470px !important;
+  object-fit: unset !important;
+}
+
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  height: 74px !important;
+}
+
+.image-gallery-left-nav .image-gallery-svg {
+  right: 4rem !important;
+  height: 40px !important;
+  width:30px !important;
+  top:19rem !important;
+  position: absolute !important;
+}
+.image-gallery-right-nav .image-gallery-svg {
+  right: -5rem !important;
+  height: 40px !important;
+  width:30px !important;
+  top:19rem !important;
+  position: absolute !important;
+}
+
+.galleryWrapperStyle{
+  width: 800px;
+}
+.downloadIcon{
+  width:40px;
+  text-align: end;
+  margin-bottom: 10px;
+}
+
+
+.iconWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:780px;
+}
+
+.mLeft{
+  margin-left: 20px;
+}
+//Mobile Frame
+
+@media (max-width:600px) {
+  .galleryWrapperStyle{
+    width:80% !important
+  }
+  .image-gallery-slide .image-gallery-image{
+    height: 200px !important;
+  }
+
+  .image-gallery-index{
+    top:160% !important
+  }
+  .image-gallery-content{
+    top: -6rem !important;
+  }
+  .image-gallery-left-nav .image-gallery-svg {
+    right: 19px !important;
+    height: 30px !important;
+    width:30px !important;
+    top:12rem !important;
+    position: absolute !important;
+  }
+  .image-gallery-right-nav .image-gallery-svg {
+    right: -28px !important;
+    height: 30px !important;
+    width:30px !important;
+    top:12rem !important;
+    position: absolute !important;
+  }
+  .image-gallery-thumbnail .image-gallery-thumbnail-image {
+    height: 60px !important;
+    width: 70px;
+}
+.image-gallery-thumbnails{
+  margin: 25px !important;
+}
+
+
+.wharf_wharf__rlt2T .wharf_help__71Jee{
+  width: 80% !important;
+  right: 10% !important;
+  bottom: 9rem !important;
+}
+
+.iconWrapper{
+  width: 78% !important;
+  margin-bottom: 88px;
+}
+.shareIcon{
+  margin-bottom: 0px;
+}
+}

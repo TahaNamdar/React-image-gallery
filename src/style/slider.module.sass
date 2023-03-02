@@ -1,0 +1,226 @@
+@import './colours'
+
+.slider
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 20
+  background-color: rgba(0, 38, 100, 0.9)
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: default
+  overflow-y: auto
+
+  button.close
+    position: absolute
+    top: 24px
+    right: 24px
+    background-color: transparent
+    padding: 0
+    border: 0
+    color: white
+    font-size: 20px
+    width: 24px
+    line-height: 24px
+
+  .container .background,
+  .container .background .circle
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  .container
+    width: 80%
+    max-width: 2000px
+
+    .heading h2
+      margin-top: 0
+      margin-bottom: 16px
+      display: inline-block
+      line-height: 40px
+      color: white
+      font-family: 'GothamMedium', sans-serif
+      font-weight: normal
+      font-size: 24px
+
+    .before,
+    .after
+      object-fit: contain
+      width: 100%
+      pointer-events: none
+      display: block
+
+    .after
+      position: absolute
+      top: 0
+      left: 0
+
+    .imageContainer
+      position: relative
+      width: 100%
+      cursor: pointer
+      overflow: hidden
+      touch-action: none
+
+      .leftText,
+      .rightText
+        position: absolute
+        bottom: 0
+        margin: 0
+        padding: 8px 16px
+        text-align: center
+        background-color: rgba(0, 0, 0, 0.5)
+        color: white
+        white-space: nowrap
+        pointer-events: none
+
+      .leftText
+        left: 0
+
+      .rightText
+        right: 0
+
+    .line 
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 50%
+      width: 3px
+      background: white
+      pointer-events: none
+      box-shadow: rgba(0,0,0,0.1) 1px 1px 4px 1px
+      
+      .background
+        background-color: rgba(255, 255, 255, 0.4)
+        width: 64px
+        height: 64px
+        border-radius: 100%
+
+        .circle
+          background-color: white
+          width: 16px
+          height: 16px
+          border-radius: 100%
+          box-shadow: rgba(0,0,0,0.1) 1px 1px 4px 1px
+
+        .left,
+        .right
+          position: absolute
+          top: 50%
+          height: 14px
+          transform: translateY(-50%)
+
+        .left
+          left: 5px
+
+        .right
+          right: 5px
+
+    p.description
+      margin: 16px 0 24px 0
+      color: white
+      font-size: 18px
+
+  button.previous,
+  button.next
+    outline: none
+    position: absolute
+    top: 50%
+    background-color: transparent
+    padding: 0
+    border: 0
+    color: white
+    width: 24px
+    height: 24px
+
+    svg
+      display: block
+      width: 100%
+      height: 100%
+
+  button.previous
+    left: 24px
+
+  button.next
+    right: 24px
+
+  .nav
+    display: flex
+    justify-content: center
+    margin-bottom: 24px
+  
+    .dots
+      button
+        background-color: white
+        padding: 0
+        border: 0
+        width: 12px
+        height: 12px
+        border-radius: 100%
+        margin-right: 8px
+        background-color: rgba(255, 255, 255, 0.3)
+
+        &:last-child
+          margin-right: 0
+
+        &:disabled
+          background-color: $lightBlue
+          cursor: default
+
+@media screen and ( max-width: 768px )
+  .slider
+    align-items: start
+    overflow: auto
+    padding: 16px
+
+    button.close
+      top: 16px
+      right: 16px
+
+    .container
+      margin-top: 90px
+      width: 100%
+      padding: 0px
+
+      .heading h2
+        font-size: 20px
+        line-height: 24px
+
+      .imageContainer
+        .leftText,
+        .rightText
+          font-size: 12px
+          padding: 8px
+
+        .background
+          width: 48px
+          height: 48px
+
+          .circle
+            width: 12px
+            height: 12px
+
+          .left, .right
+            height: 10px
+
+      p.description
+        font-size: 14px
+    
+    .nav
+      flex-flow: row wrap
+      justify-content: space-between
+
+      > *
+        position: static !important
+
+      .dots
+        transform: none
+        margin: auto
+
+      .blocker
+        width: 24px
+        height: 24px
