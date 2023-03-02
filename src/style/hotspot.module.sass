@@ -1,12 +1,17 @@
 @import './colours'
   
+.hotspot:hover .burst
+  background-color: #056AFD
+
+.hotspot:hover svg 
+  g
+    circle
+      fill: #056AFD !important
+
 .hotspot
   position: absolute
   transform: translate(-50%, -50%)
   z-index: 3
-
-
-
 
   .burst
     background-color: $darkBlue
@@ -20,7 +25,6 @@
     z-index: -1
     animation: burst 1200ms ease infinite
     
-
     &.yellow
       background-color: #f6bd16
 
@@ -78,6 +82,7 @@
   align-items: center
   font-size: 14px
   pointer-events: none
+  
 
 @keyframes burst
   0%
