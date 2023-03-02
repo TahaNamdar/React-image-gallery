@@ -26,6 +26,7 @@ const Gallery: FC<GalleryProps> = ({...props}:GalleryProps) => {
 
   const [image] = useImage(props.gallery)
 
+
   const downloadImage = () => {
     saveAs(image, 'image.jpg') // Put your image url here.
 }
