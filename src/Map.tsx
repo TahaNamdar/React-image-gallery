@@ -143,6 +143,7 @@ const Map: FC = () => {
               title = {gallery_test[g].title}
               
             >
+              
             </Hotspot>
           })}
         </div>
