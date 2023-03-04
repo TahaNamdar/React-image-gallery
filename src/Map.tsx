@@ -157,6 +157,7 @@ const Map: FC = () => {
           gallery={(gallery_test)[`gallery${index}`].images}
           onClose={onClose}
           title={(gallery_test)[`gallery${index}`].title}
+          galleryId={(gallery_test)[`gallery${index}`].imageId}
         />
       )}
 

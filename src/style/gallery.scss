@@ -54,7 +54,8 @@
 }
 
 .tooltip {
-  position: relative;
+  position: absolute;
+  z-index: 9999;
   display: inline-block;
 }
 
@@ -127,7 +128,8 @@
 
 .wharf_wharf__rlt2T .wharf_help__71Jee{
   width: 80% !important;
-  right: 10% !important;
+  right: 350px !important;
+  text-align: center !important;
   bottom: 9rem !important;
 }
 

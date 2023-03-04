@@ -1,29 +1,16 @@
-# README
-The Transport for NSW Port Macquarie breakwall photos.
+* To add photos, Go to the dataGallery file and create an object in this format :
+ 
 
-## To run the project locally
+* Example:
 
-In the project directory, you can run:
-```
-npm start
-```
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   gallery2: galleryFactory(
+    'Gallery 2',
+    'caption',
+    { x: 14, y: 30 },
+    { imageId: 'gallery2', imageCount: 28 }
+  )
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+_________________________________________________________________________________
 
-## To build the project
-
-In the project directory, you can run:
-```
-npm run build
-```
-
-or for Mac / Linux
-```
-npm run build:mac
-```
-
-## Required changes prior to  build 
-1. in .env file change PUBLIC_URL="/" to /watsons_bay/
+* All 5k photos should be in their own gallery file and in a folder called 5000
+ 

@@ -19,12 +19,12 @@ const galleryFactory = (
 ) => {
   const images = getImages(imageId, imageCount)
 
-  console.log(images)
   return {
     title,
     caption,
     x,
     y,
+    imageId,
     images,
   }
 }
@@ -33,13 +33,13 @@ export const gallery_test = {
   gallery1: galleryFactory(
     'Gallery 1',
     'caption',
-    { x: 8, y: 40 },
+    { x: 7, y: 40 },
     { imageId: 'gallery1', imageCount: 37 }
   ),
   gallery2: galleryFactory(
     'Gallery 2',
     'caption',
-    { x: 14, y: 40 },
+    { x: 14, y: 28 },
     { imageId: 'gallery2', imageCount: 28 }
   )
 }
