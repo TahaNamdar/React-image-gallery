@@ -61,7 +61,7 @@
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
+  visibility: visible;
   width: 100px;
   background-color: white;
   color: #002861;
@@ -141,4 +141,9 @@
 .shareIcon{
   margin-bottom: 0px;
 }
+}
+
+.hotspot_bg {
+  transition: all 0.5s ease;
+  filter: invert(38%) sepia(56%) saturate(6284%) hue-rotate(211deg) brightness(102%) contrast(103%);
 }

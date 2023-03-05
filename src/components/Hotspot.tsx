@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState, useEffect, MouseEventHandler } from 'react'
 import { ReactComponent as Benefit } from '../images/Photo.svg'
 import { ReactComponent as Photo } from '../images/Photo.svg'
 import { ReactComponent as Environment } from '../images/Environment.svg'
@@ -14,7 +14,11 @@ interface HotspotProps {
   onClick: () => void
   x: number
   y: number
+  svgHover:{ svgIcon: string, x: number, y: number},
+  openTooltip: (x: number, y: number, title: string) => void
+  closeTooltip: () => void
 }
+
 
 const getInner = (hotspotType: HotspotType, onClick: () => void) => {
   switch (hotspotType) {
@@ -48,20 +52,76 @@ const getClass = (type: HotspotType) => {
 }
 
 const Hotspot: FC<HotspotProps> = (props) => {
+  const [image, setImage] = useState("")
+  const [isHover, setIsHover] = useState(false)
+
+
+ 
+
+
+  useEffect(() => {
+   const fetchImage = async () => {
+
+     const svg = await import(`../images/${props.svgHover.svgIcon}`)
+
+     setImage(svg.default)
+   }
+
+   fetchImage()
+   
+  }, [image, props.svgHover.svgIcon])
+
+
+ 
+  
+  const onMouseHandler = (e: any) =>{
+    setIsHover(true)
+
+
+    const openTooltip = props.openTooltip
+
+    const y = e.pageX
+    const x = e.pageY
+    const title = props.title
+
+    console.log(openTooltip)
+    openTooltip(x, y, title)
+  }
+
+
+  const onMOuseLeaveHandler = () => {
+    setIsHover(false)
+
+    const closeTooltip = props.closeTooltip
+    closeTooltip()
+  }
+
+
   return (
-    <div className={Style.hotspot} style={{ left: props.x + '%', top: props.y + '%' }}>
-    {/* <div className='tooltip'> */}
+<div  onMouseEnter={onMouseHandler} onMouseLeave={onMOuseLeaveHandler}>
+
+<div style={{position:'absolute', top: props.svgHover.x + 'px', left: props.svgHover.y + 'px'}} className={`${isHover && 'hotspot_bg'}`}>
+        <img src={image} alt="icon" />
+    </div>
+      
+   <div className={Style.hotspot}  style={{ left: props.x + '%', top: props.y + '%' }}>
 
     {/* <span className="tooltiptext">{props.title}</span> */}
-<div className={getClass(props.hotspotType)}></div>
+  <div className={getClass(props.hotspotType)} style={{pointerEvents: 'none'}}></div>
       {getInner(props.hotspotType, props.onClick)}
       {props.count && <span className={Style.count}>{props.count}</span>}
-      <div className={Style.popup}>
-        <div className={Style.tip}>
-        </div>
+      
+      {/* <div className={Style.popup}>
+        <div className={Style.tip}></div>
         {props.children}
-      </div>
-    </div>
+      </div> */}
+  </div>
+
+
+
+</div>
+  
+
 
       
     // </div>

@@ -7,7 +7,7 @@ export const useImage = (fileNames: {original:string,thumbnail:string}[]) => {
   useEffect(() => {
     const fetchImage = async () => {
       for (let i = 0; i < fileNames.length; i++) {
-        const file: { original: string; thumbnail: string } = fileNames[i]
+        const file: { original: string; thumbnail: string; } = fileNames[i]
         const res_original = await import(`../images/${file.original}`)
         const res_thumbnail = await import(`../images/${file.thumbnail}`)
 

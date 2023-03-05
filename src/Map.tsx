@@ -8,6 +8,7 @@ import Hotspot from './components/Hotspot'
 import Gallery from './components/Gallery'
 import Data from './data/data'
 import { gallery_test } from './data/dataGallery'
+import '../src/style/gallery.scss'
 import Style from './style/wharf.module.sass'
 
 const IMAGE_AR = 4000 / Data.imageHeight
@@ -70,7 +71,10 @@ const Map: FC = () => {
   const page = useRef<HTMLDivElement>(null)
   const scroller = useRef<HTMLDivElement>(null)
   const toggleHelp = () => setShowHelp((prev) => !prev)
-
+  const [tooltipTitle, setTooltipTitle] = useState("")
+  const [tooltipCoordinates, setTooltipCoordinates] = useState({} as {x: number, y: number})
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false)
+  
   const onClose = () => {
     setSlider(false)
     setGallery(false)
@@ -118,8 +122,39 @@ const Map: FC = () => {
     }
   }
 
+
+  const openTooltip = (x: number, y: number, title: string) => {
+
+
+    setTooltipTitle(title)
+    setIsTooltipOpen(true)
+      
+    
+    setTooltipCoordinates((prev) => {
+      return {
+        ...prev,
+        x,
+        y
+      }
+    })
+  }
+
+  const closeTooltip = () => {
+   console.log("close")
+   
+    setIsTooltipOpen(false)
+  }
+
   return (
     <div id="wharf" className={Style.wharf} ref={page}>
+
+
+{ isTooltipOpen && <div  className='tooltip' style={{top: tooltipCoordinates.x, left: tooltipCoordinates.y }}>
+
+        <div className='tooltiptext'>{ tooltipTitle }</div>
+      </div>
+      }      
+
       <div className={Style.scroller} ref={scroller} onMouseMove={onDrag}>
         <div className={Style.container} style={imageStyle}>
           <img
@@ -130,7 +165,8 @@ const Map: FC = () => {
           />
 
           {Object.keys(gallery_test).map((g, i) => {
-            return <Hotspot
+      
+      return <Hotspot
               key={i}
               hotspotType="benefit"
               onClick={() => {
@@ -141,13 +177,16 @@ const Map: FC = () => {
               y={gallery_test[g].y}
               count={gallery_test[g].images.length}
               title = {gallery_test[g].title}
-              
+              svgHover = {gallery_test[g].svg}
+              openTooltip = {openTooltip}
+              closeTooltip = {closeTooltip}
             >
-              {gallery_test[g].title}
+              {/* {gallery_test[g].title} */}
             </Hotspot>
           })}
         </div>
       </div>
+
 
       {gallery && (
 

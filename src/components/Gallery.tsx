@@ -8,7 +8,7 @@ import { useImage} from '../hooks/useImage'
 
 
 interface GalleryProps {
-  gallery: {original: string, thumbnail: string}[]
+  gallery: {original: string, thumbnail: string,svg:string}[]
   index: number
   title:string
   setIndex: (index: number) => void
@@ -39,7 +39,7 @@ const Gallery: FC<GalleryProps> = ({...props}:GalleryProps) => {
     console.log(activeImage,'ac')
 console.log(index,'i')
 
-    const imageUrl = await import(`../images/${props.galleryId}/5000/${index}.jpg`)
+    const imageUrl = await import(`../images/galleries/${props.galleryId}/download/${index}.jpg`)
 
 
 
