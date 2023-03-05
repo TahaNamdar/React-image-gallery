@@ -181,7 +181,7 @@ const Map: FC = () => {
               openTooltip = {openTooltip}
               closeTooltip = {closeTooltip}
             >
-              {/* {gallery_test[g].title} */}
+            
             </Hotspot>
           })}
         </div>
