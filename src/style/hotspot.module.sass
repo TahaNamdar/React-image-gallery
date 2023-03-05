@@ -1,16 +1,12 @@
 @import './colours'
   
-.hotspot:hover .burst
-  background-color: #fff
+// .hotspot:hover .burst
+//   background-color: #fff
 
-.hotspot:hover svg 
+.hotspot svg 
   g
     circle
       fill: #056AFD !important
-
-.hotspot:hover .count
- background-color: #fff
- color:#056AFD
 
  
 
@@ -20,7 +16,7 @@
   z-index: 3
 
   .burst
-    background-color: $darkBlue
+    background-color: #fff
     width: 72px
     height: 72px
     position: absolute
@@ -30,7 +26,11 @@
     transform: translate(-50%, -50%)
     z-index: -1
     animation: burst 1200ms ease infinite
-    
+
+
+
+
+
     
     &.yellow
       background-color: #f6bd16
@@ -46,6 +46,32 @@
     border: 0
     display: block
 
+    
+  .tip 
+    background-color: white
+    bottom: 19px
+    height: 12px
+    left: 0%
+    position: absolute
+    -webkit-transform: translate(-50%,6px) rotate(45deg)
+    transform: translate(-50%,6px) rotate(45deg)
+    width: 12px
+    
+
+  .popup
+    background-color: white
+    color: $darkBlue
+    display: none
+    left: 6rem
+    padding: 10px
+    position: absolute
+    border-radius: 6px
+    font-weight: bold
+    top: 2rem
+    font-family: "PublicSans-Medium"
+    -webkit-transform: translate(-50%,-100%)
+    transform: translate(-50%,-100%)
+    white-space: nowrap
 
   
     p
@@ -59,9 +85,9 @@
   position: absolute
   top: -6px
   right: -6px
-  background: $lightBlue
+  background: #fff
   font-weight: bold
-  color: white
+  color: #056AFD
   border-radius: 100%
   width: 22px
   height: 22px

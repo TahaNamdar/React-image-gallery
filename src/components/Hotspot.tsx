@@ -50,20 +50,21 @@ const getClass = (type: HotspotType) => {
 const Hotspot: FC<HotspotProps> = (props) => {
   return (
     <div className={Style.hotspot} style={{ left: props.x + '%', top: props.y + '%' }}>
-    <div className='tooltip'>
+    {/* <div className='tooltip'> */}
 
-    <span className="tooltiptext">{props.title}</span>
+    {/* <span className="tooltiptext">{props.title}</span> */}
 <div className={getClass(props.hotspotType)}></div>
       {getInner(props.hotspotType, props.onClick)}
       {props.count && <span className={Style.count}>{props.count}</span>}
       <div className={Style.popup}>
-        <div className={Style.tip}></div>
+        <div className={Style.tip}>
+        </div>
         {props.children}
       </div>
     </div>
 
       
-    </div>
+    // </div>
   )
 }
 

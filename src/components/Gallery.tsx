@@ -75,7 +75,7 @@ console.log(index,'i')
       </section>
   
       <div className='galleryWrapperStyle'>
-        <ImageGallery showIndex={showThumbnail} items={image} showThumbnails={showThumbnail} showFullscreenButton={false} showPlayButton={false} />
+        <ImageGallery showIndex={true} items={image} showThumbnails={showThumbnail} showFullscreenButton={false} showPlayButton={false} />
       </div>
 
       <button title="Close" className={Style.close} onClick={props.onClose}>
